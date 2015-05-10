@@ -184,7 +184,21 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
+    }
+
+header#wages {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: #fff;
+    background-image: url(../img/1.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    }
 
 header .header-content {
     position: relative;
