@@ -46,6 +46,7 @@
       data.addColumn('number', '');
 
 
+
       data.addRows([
         [new Date(1965,1,1),3.2],
 [new Date(1965,2,1),3.6],
@@ -653,6 +654,10 @@
 [new Date(2015,4,1),1.85185]
       ]);
 
+  var formatter_short = new google.visualization.DateFormat({pattern: "EEE, MMM d, ''yy"});
+ formatter_short.format(data, 0);
+
+
       var options = {
         chart: {
           title: 'Average Hourly Earnings',
@@ -662,14 +667,15 @@
           legend: {position: 'none'}
       };
 
+      var date_formatter = new google.visualization.DateFormat({pattern: "MMM dd, yyyy"});
+      date_formatter.format(data, 0);
+
       var chart = new google.charts.Line(document.getElementById('chart_div'));
 
       chart.draw(data, options);
     }
 
-      $(window).smartresize(function () {
-        chart.draw(data, options);
-    });
+
   </script>
 
 
