@@ -203,6 +203,22 @@ header#wages {
     -o-background-size: cover;
     }
 
+header#access {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    text-align: center;
+    color: #fff;
+    background-image: url(../img/nebraska.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    }
+
+
+
 header .header-content {
     position: relative;
     width: 100%;
@@ -491,3 +507,5 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #222;
 }
+
+
