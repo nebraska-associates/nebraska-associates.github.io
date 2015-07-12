@@ -36,10 +36,15 @@
 
     <!-- GOOGLE SCRIPT -->
     <script type="text/javascript">
-    google.load('visualization', '1.1', {packages: ['line']});
-    google.setOnLoadCallback(drawChart);
+    google.load('visualization', '1', {packages: ['corechart','line']});
+    google.setOnLoadCallback(drawBackgroundColor);
 
-    function drawChart() {
+    $(window).on("throttledresize", function (event) {
+    drawVisualization();
+});
+
+
+    function drawBackgroundColor() {
 
       var data = new google.visualization.DataTable();
       data.addColumn('date', '');
@@ -48,246 +53,7 @@
 
 
       data.addRows([
-        [new Date(1965,1,1),3.2],
-[new Date(1965,2,1),3.6],
-[new Date(1965,3,1),4],
-[new Date(1965,4,1),3.1746],
-[new Date(1965,5,1),3.96825],
-[new Date(1965,6,1),3.55731],
-[new Date(1965,7,1),3.95257],
-[new Date(1965,8,1),3.52941],
-[new Date(1965,9,1),3.92157],
-[new Date(1965,10,1),4.31373],
-[new Date(1965,11,1),4.29688],
-[new Date(1965,12,1),3.87597],
-[new Date(1966,1,1),3.87597],
-[new Date(1966,2,1),3.861],
-[new Date(1966,3,1),3.84615],
-[new Date(1966,4,1),4.23077],
-[new Date(1966,5,1),3.81679],
-[new Date(1966,6,1),3.81679],
-[new Date(1966,7,1),4.18251],
-[new Date(1966,8,1),4.16667],
-[new Date(1966,9,1),4.15094],
-[new Date(1966,10,1),4.13534],
-[new Date(1966,11,1),4.11985],
-[new Date(1966,12,1),3.73134],
-[new Date(1967,1,1),4.10448],
-[new Date(1967,2,1),4.46097],
-[new Date(1967,3,1),4.07407],
-[new Date(1967,4,1),4.05904],
-[new Date(1967,5,1),4.04412],
-[new Date(1967,6,1),4.41176],
-[new Date(1967,7,1),4.37956],
-[new Date(1967,8,1),4.36364],
-[new Date(1967,9,1),4.34783],
-[new Date(1967,10,1),4.33213],
-[new Date(1967,11,1),4.67626],
-[new Date(1967,12,1),5.03597],
-[new Date(1968,1,1),5.37634],
-[new Date(1968,2,1),4.98221],
-[new Date(1968,3,1),5.69395],
-[new Date(1968,4,1),5.67376],
-[new Date(1968,5,1),6.00707],
-[new Date(1968,6,1),5.98592],
-[new Date(1968,7,1),5.94406],
-[new Date(1968,8,1),5.57491],
-[new Date(1968,9,1),6.25],
-[new Date(1968,10,1),6.22837],
-[new Date(1968,11,1),6.18557],
-[new Date(1968,12,1),6.50685],
-[new Date(1969,1,1),6.12245],
-[new Date(1969,2,1),6.44068],
-[new Date(1969,3,1),6.06061],
-[new Date(1969,4,1),6.37584],
-[new Date(1969,5,1),6.33333],
-[new Date(1969,6,1),6.31229],
-[new Date(1969,7,1),6.27063],
-[new Date(1969,8,1),6.93069],
-[new Date(1969,9,1),6.53595],
-[new Date(1969,10,1),6.84039],
-[new Date(1969,11,1),6.47249],
-[new Date(1969,12,1),6.10932],
-[new Date(1970,1,1),6.08974],
-[new Date(1970,2,1),6.05096],
-[new Date(1970,3,1),6.34921],
-[new Date(1970,4,1),5.99369],
-[new Date(1970,5,1),5.95611],
-[new Date(1970,6,1),5.9375],
-[new Date(1970,7,1),5.90062],
-[new Date(1970,8,1),5.8642],
-[new Date(1970,9,1),5.82822],
-[new Date(1970,10,1),5.4878],
-[new Date(1970,11,1),5.47112],
-[new Date(1970,12,1),6.06061],
-[new Date(1971,1,1),6.34441],
-[new Date(1971,2,1),6.30631],
-[new Date(1971,3,1),6.26866],
-[new Date(1971,4,1),6.25],
-[new Date(1971,5,1),6.50888],
-[new Date(1971,6,1),6.78466],
-[new Date(1971,7,1),6.45161],
-[new Date(1971,8,1),6.70554],
-[new Date(1971,9,1),6.37681],
-[new Date(1971,10,1),6.35838],
-[new Date(1971,11,1),6.34006],
-[new Date(1971,12,1),6.57143],
-[new Date(1972,1,1),7.95455],
-[new Date(1972,2,1),7.9096],
-[new Date(1972,3,1),7.86517],
-[new Date(1972,4,1),8.12325],
-[new Date(1972,5,1),7.5],
-[new Date(1972,6,1),7.18232],
-[new Date(1972,7,1),7.43802],
-[new Date(1972,8,1),7.10383],
-[new Date(1972,9,1),7.35695],
-[new Date(1972,10,1),7.88043],
-[new Date(1972,11,1),7.85908],
-[new Date(1972,12,1),7.5067],
-[new Date(1973,1,1),6.05263],
-[new Date(1973,2,1),5.75916],
-[new Date(1973,3,1),5.72917],
-[new Date(1973,4,1),5.69948],
-[new Date(1973,5,1),5.94315],
-[new Date(1973,6,1),6.18557],
-[new Date(1973,7,1),6.41026],
-[new Date(1973,8,1),6.12245],
-[new Date(1973,9,1),6.34518],
-[new Date(1973,10,1),6.04534],
-[new Date(1973,11,1),6.28141],
-[new Date(1973,12,1),5.98504],
-[new Date(1974,1,1),5.7072],
-[new Date(1974,2,1),6.18812],
-[new Date(1974,3,1),6.15764],
-[new Date(1974,4,1),6.37255],
-[new Date(1974,5,1),7.07317],
-[new Date(1974,6,1),7.52427],
-[new Date(1974,7,1),7.22892],
-[new Date(1974,8,1),7.93269],
-[new Date(1974,9,1),8.11456],
-[new Date(1974,10,1),8.31354],
-[new Date(1974,11,1),8.03783],
-[new Date(1974,12,1),8.47059],
-[new Date(1975,1,1),8.21596],
-[new Date(1975,2,1),7.92541],
-[new Date(1975,3,1),8.12065],
-[new Date(1975,4,1),7.37327],
-[new Date(1975,5,1),6.60592],
-[new Date(1975,6,1),6.54628],
-[new Date(1975,7,1),6.29213],
-[new Date(1975,8,1),6.23608],
-[new Date(1975,9,1),5.73951],
-[new Date(1975,10,1),5.48246],
-[new Date(1975,11,1),6.12691],
-[new Date(1975,12,1),5.63991],
-[new Date(1976,1,1),6.29067],
-[new Date(1976,2,1),6.69546],
-[new Date(1976,3,1),6.43777],
-[new Date(1976,4,1),6.86695],
-[new Date(1976,5,1),7.26496],
-[new Date(1976,6,1),6.77966],
-[new Date(1976,7,1),7.18816],
-[new Date(1976,8,1),7.33753],
-[new Date(1976,9,1),7.51566],
-[new Date(1976,10,1),7.48441],
-[new Date(1976,11,1),7.42268],
-[new Date(1976,12,1),7.3922],
-[new Date(1977,1,1),7.34694],
-[new Date(1977,2,1),7.28745],
-[new Date(1977,3,1),7.45968],
-[new Date(1977,4,1),7.83133],
-[new Date(1977,5,1),7.56972],
-[new Date(1977,6,1),7.7381],
-[new Date(1977,7,1),7.69231],
-[new Date(1977,8,1),7.03125],
-[new Date(1977,9,1),6.99029],
-[new Date(1977,10,1),7.54352],
-[new Date(1977,11,1),7.29367],
-[new Date(1977,12,1),7.26577],
-[new Date(1978,1,1),7.60456],
-[new Date(1978,2,1),7.35849],
-[new Date(1978,3,1),7.50469],
-[new Date(1978,4,1),7.82123],
-[new Date(1978,5,1),7.77778],
-[new Date(1978,6,1),8.10313],
-[new Date(1978,7,1),8.05861],
-[new Date(1978,8,1),8.21168],
-[new Date(1978,9,1),8.34846],
-[new Date(1978,10,1),8.45324],
-[new Date(1978,11,1),8.40787],
-[new Date(1978,12,1),8.7344],
-[new Date(1979,1,1),8.48057],
-[new Date(1979,2,1),8.6116],
-[new Date(1979,3,1),8.55148],
-[new Date(1979,4,1),7.4266],
-[new Date(1979,5,1),7.90378],
-[new Date(1979,6,1),7.6661],
-[new Date(1979,7,1),7.79661],
-[new Date(1979,8,1),7.9258],
-[new Date(1979,9,1),8.0402],
-[new Date(1979,10,1),7.29685],
-[new Date(1979,11,1),7.42574],
-[new Date(1979,12,1),7.70492],
-[new Date(1980,1,1),7.00326],
-[new Date(1980,2,1),7.28155],
-[new Date(1980,3,1),7.71704],
-[new Date(1980,4,1),8.03859],
-[new Date(1980,5,1),7.64331],
-[new Date(1980,6,1),7.91139],
-[new Date(1980,7,1),7.86164],
-[new Date(1980,8,1),7.96875],
-[new Date(1980,9,1),7.75194],
-[new Date(1980,10,1),8.50077],
-[new Date(1980,11,1),8.90937],
-[new Date(1980,12,1),8.52359],
-[new Date(1981,1,1),9.43683],
-[new Date(1981,2,1),9.04977],
-[new Date(1981,3,1),8.80597],
-[new Date(1981,4,1),9.07738],
-[new Date(1981,5,1),9.02367],
-[new Date(1981,6,1),8.79765],
-[new Date(1981,7,1),8.74636],
-[new Date(1981,8,1),8.9725],
-[new Date(1981,9,1),8.92086],
-[new Date(1981,10,1),8.11966],
-[new Date(1981,11,1),7.7574],
-[new Date(1981,12,1),7.15288],
-[new Date(1982,1,1),7.37135],
-[new Date(1982,2,1),6.91563],
-[new Date(1982,3,1),6.44719],
-[new Date(1982,4,1),6.00273],
-[new Date(1982,5,1),6.24152],
-[new Date(1982,6,1),5.79515],
-[new Date(1982,7,1),5.76408],
-[new Date(1982,8,1),5.44489],
-[new Date(1982,9,1),4.88771],
-[new Date(1982,10,1),4.87484],
-[new Date(1982,11,1),4.45026],
-[new Date(1982,12,1),4.97382],
-[new Date(1983,1,1),4.40415],
-[new Date(1983,2,1),4.78655],
-[new Date(1983,3,1),4.38144],
-[new Date(1983,4,1),4.6332],
-[new Date(1983,5,1),4.34227],
-[new Date(1983,6,1),4.33121],
-[new Date(1983,7,1),4.30925],
-[new Date(1983,8,1),3.27456],
-[new Date(1983,9,1),4.03023],
-[new Date(1983,10,1),4.39698],
-[new Date(1983,11,1),4.26065],
-[new Date(1983,12,1),3.86534],
-[new Date(1984,1,1),3.97022],
-[new Date(1984,2,1),3.33333],
-[new Date(1984,3,1),3.82716],
-[new Date(1984,4,1),3.93604],
-[new Date(1984,5,1),3.30477],
-[new Date(1984,6,1),3.5409],
-[new Date(1984,7,1),3.52369],
-[new Date(1984,8,1),3.90244],
-[new Date(1984,9,1),3.63196],
-[new Date(1984,10,1),2.88809],
-[new Date(1984,11,1),3.00481],
-[new Date(1984,12,1),3.36134],
+
 [new Date(1985,1,1),2.74463],
 [new Date(1985,2,1),3.22581],
 [new Date(1985,3,1),3.09156],
@@ -654,23 +420,18 @@
 [new Date(2015,4,1),1.85185]
       ]);
 
-  var formatter_short = new google.visualization.DateFormat({pattern: "EEE, MMM d, ''yy"});
- formatter_short.format(data, 0);
-
 
       var options = {
-        chart: {
-          title: 'Average Hourly Earnings',
-          subtitle: 'year-over-year percent change'
-        },
+          title: 'Average Hourly Earnings (year-over-year percent change)',
           colors:['#001D55'],
-          legend: {position: 'none'}
+          legend: {position: 'none'},
+
       };
 
-      var date_formatter = new google.visualization.DateFormat({pattern: "MMM dd, yyyy"});
-      date_formatter.format(data, 0);
+      var formatter =  new google.visualization.NumberFormat({fractionDigits:2});
+      formatter.format(data,1);
 
-      var chart = new google.charts.Line(document.getElementById('chart_div'));
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
 
       chart.draw(data, options);
     }
@@ -704,7 +465,7 @@
                         <a class="page-scroll" href="#page-top"><b><i>Missing Wage Growth</i></b></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#lede">Lede</a>
+                        <a class="page-scroll" href="#precis">Précis</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#theory">Theory</a>
@@ -732,25 +493,25 @@
                 <h1 style="color: #001D55; background-color: #ffffff">Where is the Wage Growth?</h1>
                 <hr>
                 <p style="color: #001D55; background-color: #ffffff">Wage gains are at all-time lows while, confusingly, the unemployment rate continues downwards.
-                Wage gains are likely held down due to the underlying mechanics of wage rigidity and nominal adjustments.
+                Much of this phenomena can be explained by the underlying mechanics of wage rigidity and nominal adjustments.
                 </p>
 
                 <!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Contact Us</a> -->
             </div>
         </div>
     </header>
-    <section id="lede">
+    <section id="precis">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h3 class="section-heading">Lede</h3><p></p>
+                    <h3 class="section-heading">Précis</h3><p></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-left">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas libero mi, fermentum id eros quis, bibendum tincidunt erat. Donec convallis felis tellus, semper tempus nunc porta in. Maecenas rutrum bibendum lorem sed mollis. Morbi molestie suscipit consectetur. Duis facilisis magna eget nisi faucibus, ut rhoncus tellus dignissim. Sed nec nunc sed arcu cursus interdum. Morbi mollis leo eu interdum eleifend.</p>
             <p></p>
-             <div id="chart_div" style="width: 700px; height: 300px"></div>
+            <div id="chart_div"></div>
             <p></p>
             <p>Nam rhoncus, dui quis mattis tempus, eros felis vulputate purus, id luctus nunc sapien maximus ligula. Nulla sed lorem condimentum, imperdiet erat sit amet, semper leo. Fusce varius, nisl semper facilisis auctor, metus massa posuere diam, eget egestas nibh dui nec orci. Pellentesque orci velit, consequat vel tincidunt vitae, ullamcorper eu eros. Sed et augue in elit volutpat semper. Ut vel arcu et dolor tempor egestas. Phasellus non bibendum ante. In molestie eros ac massa venenatis, eget fringilla metus volutpat.</p>
         </div>
